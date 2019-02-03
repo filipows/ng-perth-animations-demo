@@ -5,7 +5,8 @@ import {
   fadeInOnEnterAnimation,
   fadeOutOnLeaveAnimation,
   bounceInUpOnEnterAnimation,
-  rubberBandOnEnterAnimation
+  rubberBandOnEnterAnimation,
+  lightSpeedInOnEnterAnimation
 } from 'angular-animations';
 @Component({
   selector: 'app-home',
@@ -16,7 +17,10 @@ import {
     fadeOutOnLeaveAnimation({ duration: 200 }),
     bounceInUpOnEnterAnimation({ anchor: 'enter1' }),
     bounceInUpOnEnterAnimation({ anchor: 'enter2', delay: 100 }),
-    rubberBandOnEnterAnimation({ delay: 1000 })
+    bounceInUpOnEnterAnimation({ anchor: 'enter3', delay: 200 }),
+    rubberBandOnEnterAnimation({ delay: 3000 }),
+    bounceInUpOnEnterAnimation({ anchor: 'enter4', delay: 1000 }),
+    fadeInOnEnterAnimation({ anchor: 'enter5', delay: 3000 })
   ]
 })
 export class HomeComponent implements OnInit {

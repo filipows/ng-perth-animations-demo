@@ -19,6 +19,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
 import { FirstAnimationComponent } from './first-animation/first-animation.component';
+import { EnterLeaveComponent } from './enter-leave/enter-leave.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { FirstAnimationComponent } from './first-animation/first-animation.compo
     AngularImgComponent,
     HomeComponent,
     TodoListComponent,
-    FirstAnimationComponent
+    FirstAnimationComponent,
+    EnterLeaveComponent
   ],
   imports: [
     BrowserModule,
