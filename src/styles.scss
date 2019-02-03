@@ -2,3 +2,12 @@
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+.router-container {
+  position: relative;
+}
+
+.router-container > * {
+  display: block;
+  position: absolute;
+}

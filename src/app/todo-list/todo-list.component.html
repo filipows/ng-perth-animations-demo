@@ -1,25 +1,7 @@
-<p>
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-  todo-list works!
-</p>
+<h1>Todos:</h1>
+<ul *ngFor="let todo of todos; let i = index">
+  <ol 
+    [@fadeInRightOnEnter]="{ value: '', params: { delay: i * 50 }}"
+    [@fadeOutRightOnLeave]="{ value: '', params: { delay: todos.length * 50 - i * 50 }}"
+    >{{todo}}</ol>
+</ul>

@@ -2,7 +2,7 @@
   <button mat-icon-button (click)="snav.toggle()">
     <mat-icon>menu</mat-icon>
   </button>
-  <h1>Angular Animations Utility Library</h1>
+  <h1>NG Perth Meetup</h1>
   <nav class="top-navigtaion">
     <a mat-button routerLink="/" routerLinkActive="active">Home</a>
     <a mat-button routerLink="/todo" routerLinkActive="active">To Do</a>
@@ -20,7 +20,11 @@
       <a mat-list-item routerLink="/experiments" routerLinkActive="active">Experiments</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <router-outlet></router-outlet>
+  <!-- <mat-sidenav-content class="router-container" [@routeAnimation]="prepRouteState(routerOutlet)">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
+  </mat-sidenav-content> -->
+
+  <mat-sidenav-content class="router-container" [@routeAnimation]="routerOutlet.activatedRouteData">
+    <router-outlet #routerOutlet="outlet"></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
