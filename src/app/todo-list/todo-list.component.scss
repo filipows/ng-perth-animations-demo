@@ -1,3 +1,31 @@
 :host {
-  background:lightcoral;
+  // background: lightcoral;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+
+  .container {
+    width: 600px;
+    margin: 0 auto;
+  }
+
+  .mat-form-field {
+    width: 100%;
+  }
+
+  .mat-card {
+    width: 100%;
+    margin: 4px 0;
+    cursor: pointer;
+    background: lightblue;
+    box-sizing: border-box;
+  }
+
+  .empty-list {
+    text-align: center;
+    border: 2px dashed grey;
+    padding: 15px;
+    color: grey;
+    box-sizing: border-box;
+  }
 }

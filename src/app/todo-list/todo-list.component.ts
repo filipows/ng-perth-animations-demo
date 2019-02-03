@@ -5,7 +5,8 @@ import {
   fadeOutOnLeaveAnimation,
   fadeInRightOnEnterAnimation,
   fadeOutRightOnLeaveAnimation,
-  slideOutRightOnLeaveAnimation
+  slideOutRightOnLeaveAnimation,
+  fadeInUpOnEnterAnimation
 } from 'angular-animations';
 @Component({
   selector: 'app-todo-list',
@@ -14,36 +15,39 @@ import {
   animations: [
     fadeInOnEnterAnimation({ duration: 500, animateChildren: 'after' }),
     fadeOutOnLeaveAnimation({ duration: 200, animateChildren: 'before' }),
-    fadeInRightOnEnterAnimation(),
+    fadeInRightOnEnterAnimation({ translate: '50%' }),
     fadeOutRightOnLeaveAnimation(),
-    slideOutRightOnLeaveAnimation()
+    slideOutRightOnLeaveAnimation({ duration: 1000 }),
+    fadeInUpOnEnterAnimation({ translate: '15px', delay: 1000 })
   ]
 })
 export class TodoListComponent implements OnInit {
   @HostBinding('@fadeInOnEnter') fadeIn = true;
   @HostBinding('@fadeOutOnLeave') fadeOut = true;
 
+  todo = '';
   todos = [
-    'buy milk 0',
-    'buy milk 1',
-    'buy milk 2',
-    'buy milk 3',
-    'buy milk 4',
-    'buy milk 5',
-    'buy milk 6',
-    'buy milk 7',
-    'buy milk 8',
-    'buy milk 9',
-    'buy milk 10',
-    'buy milk 11',
-    'buy milk 12'
+    'presentation for ng perth',
+    'buy milk',
+    'feed the dog',
+    'learn angular animations',
+    'experiment with dynamic params'
   ];
 
   constructor() {}
 
   ngOnInit() {}
 
-  remove(index: number) {
+  addTodo() {
+    if (this.todo) {
+      this.todos.unshift(this.todo);
+      this.todo = '';
+    }
+  }
+
+  removeTodo(index: number) {
+    console.log('to remove', index);
+
     this.todos.splice(index, 1);
   }
 }

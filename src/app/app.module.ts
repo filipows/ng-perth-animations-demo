@@ -10,7 +10,9 @@ import {
   MatInputModule,
   MatSidenavModule,
   MatIconModule,
-  MatListModule
+  MatListModule,
+  MatCardModule,
+  MatRippleModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
@@ -42,9 +44,11 @@ import { EnterLeaveComponent } from './enter-leave/enter-leave.component';
     MatInputModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatCardModule,
+    MatRippleModule
   ],
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule {}

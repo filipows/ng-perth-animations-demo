@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { trigger, transition, style, animate } from '@angular/animations';
 
@@ -21,6 +21,7 @@ const fadeInTrigger = trigger('fadeIn', [
   ]
 })
 export class EnterLeaveComponent {
+  @HostBinding('@fadeIn') public animateOnEnter = true;
   state = false;
 
   toggle() {

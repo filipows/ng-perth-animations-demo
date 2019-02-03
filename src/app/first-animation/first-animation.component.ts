@@ -1,12 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostBinding } from '@angular/core';
 
 import { trigger, transition, state, style, animate } from '@angular/animations';
-
+import { fadeInOnEnterAnimation } from 'angular-animations';
 @Component({
   selector: 'app-first-animation',
   templateUrl: './first-animation.component.html',
   styleUrls: ['./first-animation.component.scss'],
   animations: [
+    fadeInOnEnterAnimation({ duration: 500 }),
+
     trigger('colorChange', [
       state('1', style({ background: 'cornflowerblue' })),
       state('2', style({ background: 'indianred' })),
@@ -16,6 +18,8 @@ import { trigger, transition, state, style, animate } from '@angular/animations'
   ]
 })
 export class FirstAnimationComponent {
+  @HostBinding('@fadeInOnEnter') public animateOnEnter = true;
+
   state = '1';
 
   animate() {
