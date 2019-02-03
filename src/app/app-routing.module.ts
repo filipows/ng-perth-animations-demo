@@ -1,10 +1,34 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import { ModuleWithProviders } from '@angular/core';
+import { RouterModule, Routes } from '@angular/router';
 
-const routes: Routes = [];
+import { AngularImgComponent } from './angular-img/angular-img.component';
+import { HomeComponent } from './home/home.component';
+import { TodoListComponent } from './todo-list/todo-list.component';
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule { }
+export const routes: Routes = [
+  {
+    path: '',
+    component: HomeComponent
+  },
+  {
+    path: 'todo',
+    component: TodoListComponent
+  },
+  {
+    path: 'dynamic-params',
+    component: AngularImgComponent
+  },
+  {
+    path: 'experiments',
+    component: AngularImgComponent
+  },
+  {
+    path: '**',
+    redirectTo: '/',
+    pathMatch: 'full'
+  }
+];
+
+export const AppRoutingModule: ModuleWithProviders = RouterModule.forRoot(routes, {
+  useHash: false
+});
