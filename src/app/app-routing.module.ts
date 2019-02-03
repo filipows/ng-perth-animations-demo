@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { AngularImgComponent } from './angular-img/angular-img.component';
 import { HomeComponent } from './home/home.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { FirstAnimationComponent } from './first-animation/first-animation.component';
 
 export const routes: Routes = [
   {
@@ -15,12 +16,8 @@ export const routes: Routes = [
     component: TodoListComponent
   },
   {
-    path: 'dynamic-params',
-    component: AngularImgComponent
-  },
-  {
-    path: 'experiments',
-    component: AngularImgComponent
+    path: 'first-animation',
+    component: FirstAnimationComponent
   },
   {
     path: '**',

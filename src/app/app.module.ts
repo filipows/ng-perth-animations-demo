@@ -18,13 +18,15 @@ import { AngularImgComponent } from './angular-img/angular-img.component';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { TodoListComponent } from './todo-list/todo-list.component';
+import { FirstAnimationComponent } from './first-animation/first-animation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AngularImgComponent,
     HomeComponent,
-    TodoListComponent
+    TodoListComponent,
+    FirstAnimationComponent
   ],
   imports: [
     BrowserModule,
