@@ -7,9 +7,9 @@
       autocomplete="off">
   </mat-form-field>
 
-  <div>
-    <mat-card *ngFor="let todo of todos; let i = index" (click)="removeTodo(i)" [@slideOutRightOnLeave]="{ value: '', params: { delay: todos.length * 50 - i * 50}}"
-      [@fadeInRightOnEnter]="{ value: '', params: { delay: i * 50 }}" matRipple>{{todo}}</mat-card>
+  <div @listStaggerOnEnterOnLeave>
+    <mat-card *ngFor="let todo of todos; let i = index" (click)="removeTodo(i)" [@slideOutRightOnLeave]
+      [@fadeInRightOnEnter] matRipple>{{todo}}</mat-card>
 
     <div *ngIf="todos.length === 0" class="empty-list" @fadeInUpOnEnter>
       The list is empty
